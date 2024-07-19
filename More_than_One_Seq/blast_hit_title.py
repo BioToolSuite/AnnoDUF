@@ -123,7 +123,3 @@ def word_count(input_word, word_dict):
                 word_dict[words.lower()] += 1
             else:
                 word_dict[words.lower()] = 1
-
-
-# psiblastOutputFile = sys.argv[1]
-# psiblast_out_process(psiblastOutputFile)
