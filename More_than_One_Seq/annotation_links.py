@@ -85,9 +85,3 @@ def ann(putHitFile):
         df.loc[len(df)] = blkLst
     df.to_csv(f'../DUFs/{dufID}/{pfamID}_putative_annotations.txt', index=False)
     # print("*************** Annotation is completed ******************")
-    
-# putHitFile = sys.argv[1]
-# ann(putHitFile)
-
-# ann("DUF1079/PF06435_putative_hits.txt")
-# ann(putHitFile)
