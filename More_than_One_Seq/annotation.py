@@ -54,6 +54,3 @@ def annotate(blastHitRstFile):
         status = "Error during annotation"
 
     return status
-
-# blastHitRst = sys.argv[1]
-# annotate(blastHitRst)
