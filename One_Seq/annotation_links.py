@@ -3,11 +3,10 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
-proxies = {'https':'http://proxy.ibab.ac.in:3128', 'http':'http://proxy.ibab.ac.in:3128'}
 def uniprot(searchText):
     searchText = searchText.replace(" ", "%20")
     url = f'https://rest.uniprot.org/uniprotkb/search?query={searchText}'
-    data = requests.get(url, proxies=proxies).json()
+    data = requests.get(url).json()
     if "messages" in data or len(data['results']) == 0:
         return "No hits!"
     else:
@@ -20,12 +19,11 @@ def Convert(string):
 def kegg_Pathway(searchText):
     form_data = {}
     url = "https://www.genome.jp/kegg/pathway.html"
-    proxies = {'https':'http://proxy.ibab.ac.in:3128/', 'http':'http://proxy.ibab.ac.in:3128/'}
-    response = requests.get(url, proxies=proxies)
+    response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
     form = soup.find('form')
     form_data['keyword'] = searchText
-    response = requests.post(form['action'], data=form_data, proxies=proxies)
+    response = requests.post(form['action'], data=form_data)
     soup = BeautifulSoup(response.content, "html.parser")
     if Convert(str(soup))[0] == "Bad request":
         return "No hits!"
