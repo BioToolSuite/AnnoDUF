@@ -4,9 +4,6 @@ import random
 import statistics
 from Bio import SeqIO
 
-# dufID = sys.argv[1]
-# pfamID = sys.argv[2]
-    
 def seqlen_filter(fastaFile):
     dufANDpfam = fastaFile.split("/")
     dufID = dufANDpfam[2]
@@ -44,5 +41,3 @@ def seqlen_filter(fastaFile):
         status = "Error while filtering input sequences based on criteria"
         
     return status
-
-# seqlen_filter(f"fileUpload/{dufID}/{pfamID}.fasta")
