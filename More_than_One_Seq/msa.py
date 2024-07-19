@@ -14,7 +14,3 @@ def msa_clustal(fastaSeqLen):
         status = "Error while generating MSA"
         # print("Error while generating MSA")
     return status
-
-# fastaFile = sys.argv[1]
-# msa_clustal(fastaFile)
-# msa_clustal("DUF6747/PF20532_seqLen.fasta")
