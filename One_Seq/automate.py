@@ -14,12 +14,6 @@ import annotation
 import blast_hit_title
 import annotation_links
 
-# DUF_File = pd.read_csv("Only_1_Seq_in_DUF_1.csv")
-# ntProc = []
-
-# dufID = sys.argv[1]
-# pfamID = sys.argv[2]
-
 def signal_handler(sig, frame):
     exit()
     
